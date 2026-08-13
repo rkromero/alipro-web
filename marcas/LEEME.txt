@@ -1,0 +1,3 @@
+Poné acá los logos de las marcas que fabrican con ALIPRO (PNG o JPG).
+Un archivo por marca, con el nombre de la marca (ej: duo.png, jetaime.png).
+Cuando estén, avisale a Claude y los normaliza e integra a la marquesina de la web.
