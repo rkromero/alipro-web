@@ -297,6 +297,10 @@ form{margin-top:8px}
 footer{padding:56px 0 36px}
 }
 </style>
+<!-- Píxel de Meta + API de Conversiones · dataset 1397588482338338 (ver meta.js) -->
+<script src="/meta.js"></script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+src="https://www.facebook.com/tr?id=1397588482338338&ev=PageView&noscript=1"/></noscript>
 </head>
 <body id="top">
 
@@ -869,8 +873,20 @@ function avisarAnalytics(data){
       window.dataLayer.push({event:'lead_enviado', lead_grade:data.lead_grade,
         lead_score:data.lead_score, producto:data.producto, volumen:data.cantidad});
     }
-    if(typeof fbq === 'function'){
-      fbq('track','Lead',{content_name:data.producto, content_category:data.lead_grade});
+    /* Meta: el mismo evento Lead sale por el navegador (Píxel) y por el
+       servidor (API de Conversiones) con un event_id compartido, así Meta lo
+       deduplica. Los datos personales viajan a /api/capi, que los hashea con
+       SHA-256 antes de mandarlos: nunca salen en claro hacia Meta. */
+    if(typeof window.metaEvento === 'function'){
+      window.metaEvento('Lead', {
+        content_name: data.producto,
+        content_category: data.lead_grade,
+        value: data.lead_score, currency: 'ARS',
+        volumen: data.cantidad, packaging: data.packaging, plazo: data.plazo
+      }, {
+        email: data.email, whatsapp: data.whatsapp,
+        nombre: data.nombre, provincia: data.provincia
+      });
     }
   }catch(e){ /* medir nunca puede romper el envío */ }
 }
@@ -879,7 +895,11 @@ function exito(data){
   avisarAnalytics(data);
   f.reset();
   if(PAGINA_GRACIAS){
-    location.href = PAGINA_GRACIAS + '?g=' + encodeURIComponent(data.lead_grade || '');
+    /* 400 ms de aire para que el Píxel y la API de Conversiones alcancen a
+       salir antes de que el navegador abandone la página. */
+    setTimeout(function(){
+      location.href = PAGINA_GRACIAS + '?g=' + encodeURIComponent(data.lead_grade || '');
+    }, 400);
     return;
   }
   paso2.hidden = true;
