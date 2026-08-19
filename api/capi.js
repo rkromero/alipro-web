@@ -110,6 +110,28 @@ function armarFbc(cookies, url) {
   return null;
 }
 
+/* Cookies _fbp/_fbc de primera parte, puestas por NUESTRO servidor.
+   Si un bloqueador impide que cargue fbevents.js, el navegador nunca crea
+   estas cookies y la API de Conversiones se queda sin el identificador que
+   más pesa en la calidad de coincidencias. Acá las creamos nosotros: mismo
+   formato que usa Meta, y cuando el Píxel sí carga las reutiliza tal cual. */
+function galleta(nombre, valor, host) {
+  const dominio = String(host || '').split(':')[0].replace(/^www\./, '');
+  const partes = [
+    nombre + '=' + valor,
+    'Max-Age=7776000',            // 90 días, igual que el Píxel
+    'Path=/',
+    'SameSite=Lax',
+    'Secure'
+  ];
+  if (dominio && dominio.indexOf('.') > 0) partes.push('Domain=.' + dominio);
+  return partes.join('; ');
+}
+
+function nuevoFbp() {
+  return 'fb.1.' + Date.now() + '.' + Math.floor(1e9 + Math.random() * 9e9);
+}
+
 function ipDelCliente(req) {
   const xff = req.headers['x-forwarded-for'];
   if (xff) return String(xff).split(',')[0].trim();
@@ -155,11 +177,22 @@ module.exports = async function handler(req, res) {
     const p = body.user_data || {};
     const [nombre, apellido] = partirNombre(p.nombre || p.fn);
 
+    /* Si el navegador no tiene _fbp o _fbc, las creamos y se las devolvemos
+       en la respuesta, así el resto de la sesión ya viaja identificada. */
+    const aSetear = [];
+    let fbp = cookies._fbp;
+    if (!fbp) { fbp = nuevoFbp(); aSetear.push(galleta('_fbp', fbp, req.headers.host)); }
+
+    let fbc = armarFbc(cookies, url);
+    if (fbc && !cookies._fbc) aSetear.push(galleta('_fbc', fbc, req.headers.host));
+
+    if (aSetear.length) res.setHeader('Set-Cookie', aSetear);
+
     const user_data = {
       client_ip_address: ipDelCliente(req),
       client_user_agent: req.headers['user-agent'] || null,
-      fbp: cookies._fbp || null,
-      fbc: armarFbc(cookies, url),
+      fbp: fbp,
+      fbc: fbc,
       em: hashEmail(p.email),
       ph: hashTelefono(p.whatsapp || p.telefono),
       fn: hashTexto(nombre),
