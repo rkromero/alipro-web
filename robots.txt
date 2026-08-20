@@ -1,0 +1,14 @@
+# www.alipro.com.ar
+# Fabrica de alimentos a fason - produccion para terceros
+
+User-agent: *
+Allow: /
+
+# El endpoint de la API de Conversiones no es contenido.
+Disallow: /api/
+
+# gracias.html NO se bloquea a proposito: ya tiene <meta name="robots" content="noindex">
+# y Google necesita poder entrar para leer esa etiqueta. Bloquearla aca la dejaria
+# indexable "a ciegas", que es exactamente lo contrario de lo que se busca.
+
+Sitemap: https://www.alipro.com.ar/sitemap.xml

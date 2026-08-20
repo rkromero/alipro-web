@@ -7,14 +7,14 @@
 <title>Fason de Alfajores y Producción para Terceros | ALIPRO — Fábrica Argentina</title>
 <meta name="description" content="Fábrica argentina especializada en fason de alfajores, galletitas, piononos y bizcochuelos. Producción para terceros con RNE/RNPA habilitada, BPM y trazabilidad por lote. Desde 300 unidades hasta 100 toneladas mensuales. Cotizá tu producción.">
 <meta name="keywords" content="fason de alfajores,fason de galletitas,producción para terceros,fabricación a fason,maquila de alfajores,fábrica de alfajores argentina,producción con marca propia,tapas para alfajores,fason de piononos,fason de bizcochuelos,pionono para terceros,bizcochuelo marca propia,RNE RNPA">
-<!-- Reemplazar https://alipro.com.ar por el dominio real cuando esté publicado -->
-<link rel="canonical" href="https://alipro.com.ar/">
+<!-- Dominio canónico: SIEMPRE con www. El apex alipro.com.ar redirige acá. -->
+<link rel="canonical" href="https://www.alipro.com.ar/">
 <meta property="og:title" content="ALIPRO — Fason de alfajores y producción para terceros">
 <meta property="og:description" content="Fábrica argentina con RNE/RNPA, BPM y trazabilidad por lote. Desde 300 unidades por lote hasta 100 ton/mes.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
-<meta property="og:url" content="https://alipro.com.ar/">
-<meta property="og:image" content="https://alipro.com.ar/og-alipro.jpg">
+<meta property="og:url" content="https://www.alipro.com.ar/">
+<meta property="og:image" content="https://www.alipro.com.ar/og-alipro.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,9 +23,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" imagesrcset="hero-alfajor-480.webp 480w, hero-alfajor-720.webp 720w, hero-alfajor-1000.webp 1000w, hero-alfajor-1400.webp 1400w" imagesizes="(min-width:880px) 38vw, 76vw" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"ALIPRO","legalName":"RODOLFO ROMERO E HIJOS SRL","description":"Fábrica argentina de fason de alfajores, galletitas, piononos, bizcochuelos y producción de alimentos para terceros","email":"contacto@alipro.com.ar","areaServed":"AR"}
+{"@context":"https://schema.org","@type":"Organization","name":"ALIPRO","url":"https://www.alipro.com.ar/","legalName":"RODOLFO ROMERO E HIJOS SRL","description":"Fábrica argentina de fason de alfajores, galletitas, piononos, bizcochuelos y producción de alimentos para terceros","email":"contacto@alipro.com.ar","areaServed":"AR"}
 </script>
 <style>
 :root{--rojo:#C8102E;--rojo-osc:#A80D26;--carbon:#232529;--tinta:#2B2E33;--gris:#5F646A;--linea:#DDDFE2;--hueso:#F7F7F5}
@@ -59,10 +60,22 @@ nav .btn{padding:10px 16px;font-size:13px;min-height:40px}
 .hero .ghost{color:#fff !important;border-color:rgba(255,255,255,.55)}
 .hero .ghost:hover{background:rgba(255,255,255,.1)}
 .hero .certs{display:flex;gap:18px;flex-wrap:wrap;margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.22);font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:#B4B8BD;font-weight:600}
-.hero .foto{margin-top:36px;border-radius:10px;overflow:hidden;position:relative}
-.hero .foto img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.hero .badge{position:absolute;left:12px;bottom:12px;background:#fff;color:var(--tinta);border-radius:8px;padding:10px 14px;font-size:12.5px;line-height:1.35}
-.hero .badge b{font-family:'Montserrat',Arial,sans-serif;font-weight:700;color:var(--rojo);font-size:17px;display:block}
+/* Escena del hero: tarjeta blanca sobre carbón (manual §6.3), foto real sobre blanco, wordmark chico en rojo sobre blanco (§5.3). Sin efectos ni movimiento (§4). */
+.hero .foto{margin-top:36px;position:relative;border-radius:12px;overflow:hidden;background:#fff;aspect-ratio:4/3;isolation:isolate}
+.hero .marca{position:absolute;right:16px;top:16px;width:100px;height:auto;pointer-events:none}
+.hero .alfajor{position:absolute;left:48%;top:57%;width:76%;height:auto;transform:translate(-50%,-50%);mix-blend-mode:multiply}
+.hero .chip{position:absolute;background:#fff;color:var(--tinta);border:1px solid var(--linea);border-radius:8px;padding:8px 12px;font-size:12px;line-height:1.35;box-shadow:0 6px 18px rgba(43,46,51,.10)}
+.hero .chip b{font-family:'Montserrat',Arial,sans-serif;font-weight:700;color:var(--rojo);font-size:15px;display:block}
+.hero .chip small{display:block;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--gris);font-weight:600}
+.hero .tag{left:14px;top:14px;border:1.5px dashed var(--rojo)}
+.hero .tag b{font-size:14px;letter-spacing:2.2px;display:flex;align-items:center;gap:8px;margin-top:2px}
+.hero .tag b::before{content:"";width:10px;height:10px;background:var(--rojo);border-radius:2px;flex:none}
+.hero .spec{display:none;right:14px;bottom:14px}
+.hero .spec ul{list-style:none;margin:6px 0 0;padding:0;font-weight:500}
+.hero .spec li{display:flex;gap:7px;align-items:center;padding:2px 0}
+.hero .spec li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rojo);flex:none}
+.hero .badge{right:14px;bottom:14px}
+@media(min-width:600px){.hero .alfajor{left:50%;width:76%;top:56%}.hero .spec{display:block}.hero .tag{left:18px;top:18px}.hero .badge{left:18px;right:auto;bottom:18px}.hero .spec{right:18px;bottom:18px}}
 section{padding:64px 0;scroll-margin-top:70px}
 .shead{display:flex;align-items:baseline;gap:14px;border-top:2px solid var(--tinta);padding-top:14px;margin-bottom:8px}
 .shead .num{font-size:14px}
@@ -258,8 +271,14 @@ footer a{color:#C7CACD;text-decoration:none}
 nav .btn{padding:12px 22px;font-size:14px}
 .hero .in{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;padding:80px 32px 84px}
 .hero .ctas{flex-direction:row;gap:14px}
-.hero .foto{margin-top:0}
-.hero .foto img{aspect-ratio:4/3.4}
+.hero .foto{margin-top:0;aspect-ratio:1/1;border-radius:14px}
+.hero .alfajor{width:84%;top:53%}
+.hero .marca{width:120px;right:24px;top:24px}
+.hero .tag{left:22px;top:22px}
+.hero .spec{right:22px;bottom:22px}
+.hero .badge{left:22px;bottom:22px}
+.hero .chip{padding:12px 16px;font-size:13px}
+.hero .chip b{font-size:17px}
 section{padding:96px 0}
 .stats{grid-template-columns:repeat(4,1fr)}
 .stat{padding:28px 20px 28px 0}
@@ -330,9 +349,12 @@ src="https://www.facebook.com/tr?id=1397588482338338&ev=PageView&noscript=1"/></
 </div>
 <div class="certs"><span>Desde 300 u. por lote</span><span>RNE habilitado</span><span>RNPA</span><span>BPM</span><span>NDA</span></div>
 </div>
-<div class="foto">
-<img src="https://images.unsplash.com/photo-1651525670099-f828fb5478a5?q=80&auto=format&fit=crop&w=760" srcset="https://images.unsplash.com/photo-1651525670099-f828fb5478a5?q=80&auto=format&fit=crop&w=480 480w, https://images.unsplash.com/photo-1651525670099-f828fb5478a5?q=80&auto=format&fit=crop&w=760 760w, https://images.unsplash.com/photo-1651525670099-f828fb5478a5?q=80&auto=format&fit=crop&w=1100 1100w, https://images.unsplash.com/photo-1651525670099-f828fb5478a5?q=80&auto=format&fit=crop&w=1600 1600w" sizes="(min-width:880px) 47vw, 100vw" alt="Planta de producción de alimentos con maquinaria industrial" fetchpriority="high" decoding="async">
-<div class="badge">Capacidad productiva<b>100 ton/mes</b></div>
+<div class="foto" role="img" aria-label="Alfajor bañado en chocolate con relleno de dulce de leche fabricado por ALIPRO, con etiqueta lista para tu marca">
+<svg class="marca" viewBox="0 0 5021 930" aria-hidden="true" focusable="false"><g fill="#C8102E" transform="translate(90,840)"><path d="M208 -151V-304H726V-151ZM594 -750 940 0H739L442 -671H500L204 0H2L349 -750Z"/><path d="M1245.0 -750V-84L1160.0 -167H1722.0V0H1056.0V-750Z"/><path d="M1853.0 -750H2042.0V0H1853.0Z"/><path d="M2643.0 -750Q2735.0 -750 2801.5 -718.5Q2868.0 -687 2903.5 -630.0Q2939.0 -573 2939.0 -497Q2939.0 -421 2903.5 -364.0Q2868.0 -307 2801.5 -275.5Q2735.0 -244 2643.0 -244H2315.0V-397H2633.0Q2687.0 -397 2718.0 -423.5Q2749.0 -450 2749.0 -497Q2749.0 -544 2718.0 -570.5Q2687.0 -597 2633.0 -597H2332.0L2417.0 -685V0H2228.0V-750Z"/><path d="M3204.0 -420H3485.0Q3538.0 -420 3569.0 -444.5Q3600.0 -469 3600.0 -513Q3600.0 -557 3569.0 -581.5Q3538.0 -606 3485.0 -606H3177.0L3262.0 -699V0H3073.0V-750H3510.0Q3594.0 -750 3657.0 -720.0Q3720.0 -690 3755.0 -637.0Q3790.0 -584 3790.0 -513Q3790.0 -443 3755.0 -390.0Q3720.0 -337 3657.0 -307.0Q3594.0 -277 3510.0 -277H3204.0ZM3325.0 -351H3538.0L3814.0 0H3595.0Z"/><path d="M4360.0 16Q4228.0 16 4128.5 -33.0Q4029.0 -82 3974.0 -170.0Q3919.0 -258 3919.0 -375Q3919.0 -492 3974.0 -580.0Q4029.0 -668 4128.5 -717.0Q4228.0 -766 4360.0 -766Q4492.0 -766 4591.5 -717.0Q4691.0 -668 4746.5 -580.0Q4802.0 -492 4802.0 -375Q4802.0 -258 4746.5 -170.0Q4691.0 -82 4591.5 -33.0Q4492.0 16 4360.0 16ZM4360.0 -153Q4438.0 -153 4494.0 -179.5Q4550.0 -206 4580.5 -256.0Q4611.0 -306 4611.0 -375Q4611.0 -444 4580.5 -494.0Q4550.0 -544 4494.0 -570.5Q4438.0 -597 4360.0 -597Q4283.0 -597 4227.0 -570.5Q4171.0 -544 4140.0 -494.0Q4109.0 -444 4109.0 -375Q4109.0 -306 4140.0 -256.0Q4171.0 -206 4227.0 -179.5Q4283.0 -153 4360.0 -153Z"/></g></svg>
+<img class="alfajor" src="hero-alfajor-720.webp" srcset="hero-alfajor-480.webp 480w, hero-alfajor-720.webp 720w, hero-alfajor-1000.webp 1000w, hero-alfajor-1400.webp 1400w" sizes="(min-width:880px) 38vw, 76vw" width="1400" height="848" alt="" fetchpriority="high" decoding="async">
+<div class="chip tag" aria-hidden="true"><small>Etiqueta</small><b>Tu marca</b></div>
+<div class="chip spec" aria-hidden="true"><small>Receta a medida</small><ul><li>Baño de chocolate</li><li>Relleno dulce de leche</li><li>Tapa y formato a elección</li></ul></div>
+<div class="chip badge" aria-hidden="true">Capacidad productiva<b>100 ton/mes</b></div>
 </div>
 </div>
 </header>
