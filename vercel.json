@@ -3,6 +3,8 @@
   "redirects": [
     {"source":"/alfajores.html","destination":"/fason/alfajores","statusCode":301},
     {"source":"/alfajores","destination":"/fason/alfajores","statusCode":301},
+    {"source":"/fason/piononos","destination":"/fason/piononos-y-bizcochuelos","statusCode":301},
+    {"source":"/fason/bizcochuelos","destination":"/fason/piononos-y-bizcochuelos","statusCode":301},
     {"source":"/index.html","destination":"/","statusCode":308},
     {"source":"/index","destination":"/","statusCode":308},
     {"source":"/:path*/index.html","destination":"/:path*","statusCode":308},

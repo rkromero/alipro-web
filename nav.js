@@ -32,8 +32,7 @@ const PAGINAS = [
   { nombre: 'Producción a fasón',     url: '/fason',                    activo: true,  hijos: [
     { nombre: 'Alfajores',              url: '/fason/alfajores',              activo: true },
     { nombre: 'Galletitas',             url: '/fason/galletitas',             activo: false },
-    { nombre: 'Piononos',               url: '/fason/piononos',               activo: false },
-    { nombre: 'Bizcochuelos',           url: '/fason/bizcochuelos',           activo: false },
+    { nombre: 'Piononos y bizcochuelos', url: '/fason/piononos-y-bizcochuelos', activo: true },
     { nombre: 'Tapas y semielaborados', url: '/fason/tapas-y-semielaborados', activo: false },
   ] },
   { nombre: 'Primer Lote',            url: '/primer-lote',              activo: true },
