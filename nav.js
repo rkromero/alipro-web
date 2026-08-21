@@ -36,10 +36,10 @@ const PAGINAS = [
     { nombre: 'Bizcochuelos',           url: '/fason/bizcochuelos',           activo: false },
     { nombre: 'Tapas y semielaborados', url: '/fason/tapas-y-semielaborados', activo: false },
   ] },
-  { nombre: 'Primer Lote',            url: '/primer-lote',              activo: false },
-  { nombre: 'Packaging',              url: '/packaging',                activo: false },
-  { nombre: 'La planta',              url: '/planta-y-habilitaciones',  activo: false },
-  { nombre: 'Preguntas',              url: '/preguntas-frecuentes',     activo: false },
+  { nombre: 'Primer Lote',            url: '/primer-lote',              activo: true },
+  { nombre: 'Packaging',              url: '/packaging',                activo: true },
+  { nombre: 'La planta',              url: '/planta-y-habilitaciones',  activo: true },
+  { nombre: 'Preguntas',              url: '/preguntas-frecuentes',     activo: true },
   { nombre: 'Cotizar',                url: '/cotizar',                  activo: false, boton: true, ancla: '#cotizar' },
 ];
 

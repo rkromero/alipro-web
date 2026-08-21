@@ -28,14 +28,7 @@
 </script>
 <link rel="stylesheet" href="/alipro.css">
 <style>
-/* Panel del hero: tarjeta blanca sobre carbón con lo que incluye el servicio (manual §6.3) */
-.hero .panel{margin-top:36px;background:#fff;color:var(--tinta);border-radius:12px;padding:24px 22px 22px}
-.hero .panel .ptag{margin-bottom:10px}
-.hero .panel h2{font-size:19px;margin-bottom:14px}
-.hero .panel ul{list-style:none}
-.hero .panel li{font-size:14.5px;line-height:1.45;padding:7px 0 7px 26px;position:relative;border-top:1px solid var(--linea)}
-.hero .panel li:first-child{border-top:none}
-.hero .panel li::before{content:"\2713";position:absolute;left:2px;top:7px;font-family:'Montserrat',Arial,sans-serif;font-weight:700;color:#1D8A46}
+/* El panel del hero (.hero .panel) vive en alipro.css */
 /* Tarjetas de producto: una por línea, con enlace solo a las páginas que existen */
 .pgrid{display:grid;gap:14px;margin-top:8px}
 .pcard{border:1px solid var(--linea);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
@@ -48,7 +41,6 @@
 .pcard a:hover{text-decoration:underline}
 .pcard .pronto{font-size:13px;color:var(--gris);min-height:44px;display:inline-flex;align-items:center}
 @media(min-width:880px){
-.hero .panel{margin-top:0;padding:30px 30px 26px}
 .pgrid{grid-template-columns:repeat(3,1fr);gap:24px}
 }
 </style>

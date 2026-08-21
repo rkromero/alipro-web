@@ -49,6 +49,12 @@
 .prod img{width:100%;max-width:340px;margin:0 auto 14px;border-radius:8px;aspect-ratio:4/3;object-fit:cover;display:block}
 .prod ul li{padding:4px 0}
 .prod ul li::before{display:none}
+/* Lista de preguntas de la portada: cada una enlaza a su respuesta en /preguntas-frecuentes */
+.qlist{list-style:none;border-top:1px solid var(--linea)}
+.qlist li{border-bottom:1px solid var(--linea)}
+.qlist a{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:52px;padding:8px 0;text-decoration:none;font-family:'Montserrat',Arial,sans-serif;font-weight:600;font-size:15px;color:var(--tinta)}
+.qlist a::after{content:"92";color:var(--rojo);flex:none}
+.qlist a:hover{color:var(--rojo)}
 @media(min-width:880px){
 .hero .foto{margin-top:0;aspect-ratio:1/1;border-radius:14px}
 .hero .alfajor{width:84%;top:53%}
@@ -125,31 +131,10 @@ src="https://www.facebook.com/tr?id=1397588482338338&ev=PageView&noscript=1"/></
 <section id="primerlote" style="padding-top:0"><div class="wrap">
 <div class="shead"><span class="num">02</span><span class="kicker">Para los que empiezan</span></div>
 <h2 class="stitle">Primer Lote: arrancá desde 300 unidades</h2>
-<p class="slede">Casi ninguna fábrica te atiende si no pedís miles de unidades, y ahí queda un montón de gente afuera. Armamos una puerta de entrada para el que recién arranca, porque varias de las marcas que hoy nos compran por camión empezaron con un lote chico.</p>
-<div class="plgrid">
-<div class="plcard">
-<span class="ptag">Qué incluye</span>
-<ul>
-<li class="yes">Desde <b>300 unidades</b>, envasadas en flow pack cristal con tu etiqueta</li>
-<li class="yes">Desde <b>1.000 unidades</b> si querés más opciones de presentación</li>
-<li class="yes">Sin inversión inicial en bobinas impresas</li>
-<li class="yes">Producido en planta con RNE vigente y bajo normas BPM</li>
-<li class="yes">Te acompañamos con el RNPA y el rotulado de tu producto</li>
-</ul>
-</div>
-<div class="plcard">
-<span class="ptag">Qué necesitás traer</span>
-<ul>
-<li class="yes">CUIT, aunque lo hayas sacado la semana pasada</li>
-<li class="yes">Un nombre de marca — no hace falta que esté registrada todavía</li>
-<li class="yes">Una idea de tu producto: sabor, formato y a quién se lo vas a vender</li>
-<li class="yes">No necesitás planta, maquinaria, personal ni habilitaciones propias</li>
-</ul>
-</div>
-</div>
-<div class="plcta">
+<p class="slede" style="margin-bottom:22px">Casi ninguna fábrica te atiende si no pedís miles de unidades. Armamos una puerta de entrada para el que recién arranca: desde 300 unidades en flow pack cristal con tu etiqueta, sin inversión inicial en bobinas impresas y con acompañamiento en el RNPA y el rotulado. Solo necesitás CUIT, un nombre de marca y una idea de tu producto.</p>
+<div class="plcta" style="margin-top:0">
 <p>Si estás arrancando, contanos qué tenés en mente. Te decimos si es viable y qué te falta, sin vueltas y sin compromiso.</p>
-<a class="btn" href="#cotizar">Cotizar mi primer lote</a>
+<div style="display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;flex:none"><a class="btn" href="#cotizar">Cotizar mi primer lote</a><a class="more" href="/primer-lote">Qué incluye el Primer Lote →</a></div>
 </div>
 </div></section>
 
@@ -190,44 +175,8 @@ src="https://www.facebook.com/tr?id=1397588482338338&ev=PageView&noscript=1"/></
 <section id="packaging"><div class="wrap">
 <div class="shead"><span class="num">04</span><span class="kicker">Packaging</span></div>
 <h2 class="stitle">Dos formas de envasar tu producto</h2>
-<p class="slede">Esta es la decisión que más define cuánto necesitás invertir para arrancar. Conviene entenderla antes de pedir la cotización.</p>
-
-<div class="packgrid">
-<div class="packcard">
-<span class="ptag">Opción A</span>
-<h3>Film cristal</h3>
-<p class="pdesc">Envase transparente sin impresión. Tu marca va en una etiqueta adhesiva o en la caja de presentación.</p>
-<ul>
-<li class="yes">Sin inversión inicial en bobinas</li>
-<li class="yes">Arrancás desde 300 unidades, el mínimo más bajo que hacemos</li>
-<li class="yes">Ideal para validar el producto antes de escalar</li>
-<li class="no">El envase individual no lleva tu marca impresa</li>
-</ul>
-</div>
-<div class="packcard hi">
-<span class="ptag">Opción B</span>
-<h3>Bobina impresa con tu marca</h3>
-<p class="pdesc">Flow pack individual con tu diseño impreso en el film. Es la presentación que pide la góndola.</p>
-<ul>
-<li class="yes">Tu marca impresa en cada unidad</li>
-<li class="yes">La presentación que exige el retail</li>
-<li class="no">Inversión inicial de aprox. $3.000.000, por única vez</li>
-<li class="no">Mínimo de impresión: 300 kg de bobina</li>
-</ul>
-</div>
-</div>
-
-<div class="bobina">
-<div class="bhead">Cómo funciona la bobina impresa</div>
-<div class="bsteps">
-<div class="bstep"><span class="bn">1</span><b>Mínimo 300 kg</b><span class="bt">Es lo mínimo que imprime una flexográfica. Por debajo de esa cantidad no se puede fabricar la bobina, no es una condición nuestra.</span></div>
-<div class="bstep"><span class="bn">2</span><b>Dos diseños, mitad y mitad</b><span class="bt">Se reparte en 150 kg por diseño, así arrancás con dos sabores o dos variantes en lugar de una sola.</span></div>
-<div class="bstep"><span class="bn">3</span><b>Rinde unos 100.000 alfajores</b><span class="bt">Los 300 kg alcanzan aproximadamente para 100.000 unidades envasadas: unas 50.000 por cada diseño.</span></div>
-<div class="bstep"><span class="bn">4</span><b>Queda guardada en planta</b><span class="bt">La almacenamos nosotros y la vamos consumiendo en cada producción que nos pidas, sin costo de depósito.</span></div>
-</div>
-<!-- MONTO BOBINA: si cambia, actualizar acá, en la tarjeta "Opción B" y en el aviso del formulario -->
-<p class="bnota">La inversión inicial ronda los <b>$3.000.000</b> por única vez: unos <b>$30 por alfajor</b> sobre las primeras 100.000 unidades, y menos por unidad a medida que producís más. Valores de referencia a julio 2026; te confirmamos el importe vigente junto con tu cotización.</p>
-</div>
+<p class="slede" style="margin-bottom:22px">Esta es la decisión que más define cuánto necesitás invertir para arrancar. <b>Film cristal</b> desde 300 unidades, sin inversión inicial y con tu marca en una etiqueta o en la caja; o <b>bobina impresa con tu marca</b> desde 1.000 unidades, con una inversión por única vez. La bobina queda guardada en planta y se consume en cada producción, sin costo de depósito.</p>
+<p><a class="more" href="/packaging">Cuándo conviene cada una y cómo funciona la bobina →</a></p>
 </div></section>
 
 <section class="formsec" id="proceso" style="background:#fff;padding-top:0"><div class="wrap">
@@ -251,14 +200,14 @@ src="https://www.facebook.com/tr?id=1397588482338338&ev=PageView&noscript=1"/></
 <section class="calidad" id="calidad"><div class="wrap">
 <div class="qgrid">
 <div>
-<div class="shead"><span class="num" style="color:#FF8FA1">06</span><span class="kicker" style="color:#8B9096">Calidad</span></div>
+<div class="shead"><span class="num" style="color:#FF8FA1">06</span><span class="kicker" style="color:#8B9096">La planta</span></div>
 <h2 class="stitle">Estándares que protegen tu marca</h2>
 <p class="slede">Cada lote que sale de planta lleva la reputación de un cliente. Y la nuestra.</p>
-<div class="qitem"><b>RNE habilitado y RNPA vigente</b><span>Registro Nacional de Establecimientos y de Productos Alimenticios.</span></div>
+<div class="qitem"><b>RNE habilitado</b><span>Registro Nacional de Establecimiento: la planta está autorizada a elaborar alimentos.</span></div>
+<div class="qitem"><b>RNPA para tu producto</b><span>Registro Nacional de Producto Alimenticio. Es tuyo y te acompañamos en el trámite.</span></div>
 <div class="qitem"><b>Buenas Prácticas de Manufactura (BPM)</b><span>En toda la planta, con personal capacitado y registrado.</span></div>
 <div class="qitem"><b>Trazabilidad completa por lote</b><span>Insumos, proceso, operario y destino de cada partida.</span></div>
-<div class="qitem"><b>Rotulado según Código Alimentario Argentino</b><span>Incluida la Ley de Etiquetado Frontal.</span></div>
-<div class="qitem"><b>Acompañamiento regulatorio</b><span>Te ayudamos a registrar tu RNPA y habilitar tu producto.</span></div>
+<p style="margin-top:18px"><a class="more" href="/planta-y-habilitaciones" style="color:#FF8FA1">Qué es cada sigla y de qué lado está →</a></p>
 </div>
 <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&auto=format&fit=crop&w=760" srcset="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&auto=format&fit=crop&w=480 480w, https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&auto=format&fit=crop&w=760 760w, https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&auto=format&fit=crop&w=1100 1100w, https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?q=80&auto=format&fit=crop&w=1600 1600w" sizes="(min-width:880px) 48vw, 100vw" alt="Operarios con cofia y guardapolvo en planta de alimentos" loading="lazy" decoding="async">
 </div>
@@ -274,6 +223,7 @@ src="https://www.facebook.com/tr?id=1397588482338338&ev=PageView&noscript=1"/></
 <img src="https://images.unsplash.com/photo-1651525670033-279c26cc2347?q=80&auto=format&fit=crop&w=760" srcset="https://images.unsplash.com/photo-1651525670033-279c26cc2347?q=80&auto=format&fit=crop&w=480 480w, https://images.unsplash.com/photo-1651525670033-279c26cc2347?q=80&auto=format&fit=crop&w=760 760w, https://images.unsplash.com/photo-1651525670033-279c26cc2347?q=80&auto=format&fit=crop&w=1100 1100w, https://images.unsplash.com/photo-1651525670033-279c26cc2347?q=80&auto=format&fit=crop&w=1600 1600w" sizes="(min-width:880px) 32vw, 84vw" alt="Cajas de producto terminado listas para despacho" loading="lazy" decoding="async">
 </div>
 <div class="galhint">Deslizá para ver más →</div>
+<div class="wrap"><p style="margin-top:18px"><a class="more" href="/planta-y-habilitaciones">La planta y sus habilitaciones: RNE, RNPA, BPM y trazabilidad →</a></p></div>
 </section>
 
 <div class="banda"><div class="wrap">
@@ -324,16 +274,18 @@ src="https://www.facebook.com/tr?id=1397588482338338&ev=PageView&noscript=1"/></
 <section id="faq"><div class="wrap">
 <div class="shead"><span class="num">09</span><span class="kicker">Preguntas frecuentes</span></div>
 <h2 class="stitle">Lo que todos preguntan antes de empezar</h2>
-<div class="faq" style="margin-top:28px">
-<details><summary>¿Qué es la producción a fason?</summary><div class="a">Fason (o façon) es la fabricación de productos para terceros: vos ponés la marca y nosotros la planta, el equipo y las habilitaciones. El producto sale terminado y listo para vender con tu marca.</div></details>
-<details><summary>¿Cuál es la cantidad mínima de producción?</summary><div class="a">Depende del envase. Con <b>flow pack cristal</b> arrancamos desde <b>300 unidades</b>: es nuestra puerta de entrada para el que recién empieza. Desde <b>1.000 unidades</b> se abren el resto de las presentaciones. De ahí escalamos con tu crecimiento hasta 100 toneladas mensuales. Según el producto el mínimo puede variar: te lo confirmamos en la cotización.</div></details>
-<details><summary>¿Qué necesito para que el envase lleve mi marca impresa?</summary><div class="a">Una bobina impresa propia. El mínimo de impresión es de <b>300 kg</b> —150 kg por cada uno de dos diseños—, porque es lo mínimo que produce una flexográfica. Esos 300 kg rinden unos 100.000 alfajores, quedan guardados en nuestra planta y se van consumiendo en cada producción que nos pidas. Es una inversión inicial de una sola vez, de aproximadamente <b>$3.000.000</b> (valores de referencia a julio 2026), que equivale a unos $30 por alfajor sobre esas primeras 100.000 unidades. Si todavía no querés hacerla, podés arrancar con film cristal y tu marca en etiqueta o en la caja.</div></details>
-<details><summary>¿Puedo fabricar con mi propia receta?</summary><div class="a">Sí. Producimos tu receta tal cual (con NDA firmado antes de conocerla) o desarrollamos una a medida junto a vos, desde la formulación hasta el producto final. La propiedad de tu receta queda protegida por contrato.</div></details>
-<details><summary>¿Me ayudan con el RNPA y las habilitaciones?</summary><div class="a">Sí. Nuestra planta cuenta con RNE vigente y te acompañamos en el registro del RNPA de tu producto y en el rotulado según el Código Alimentario Argentino.</div></details>
-<details><summary>¿Cuánto tarda una cotización?</summary><div class="a">La cotización formal la enviamos dentro de las 72 hs hábiles de recibido el brief. Los plazos de muestra y primera producción te los confirmamos junto con la cotización.</div></details>
-<details><summary>¿Cómo protegen la confidencialidad?</summary><div class="a">Firmamos NDA antes de conocer tu receta, marca o volúmenes. Nunca mostramos productos ni marcas de clientes sin autorización escrita.</div></details>
-<details><summary>¿Qué productos fabrican hoy?</summary><div class="a">Alfajores en todas sus variantes, galletitas dulces y saladas, cookies, piononos, bizcochuelos y merengues en distintas presentaciones, y tapas, obleas y semielaborados para otras fábricas y pastelerías. Si tu producto es afín a nuestra tecnología, contanos y lo evaluamos.</div></details>
-</div>
+<p class="slede" style="margin-bottom:22px">Qué es el fasón, cuál es la cantidad mínima, qué hace falta para el envase con tu marca, si podés usar tu receta, el RNPA, los plazos de cotización y la confidencialidad: las ocho preguntas, respondidas en una sola página.</p>
+<ul class="qlist">
+<li><a href="/preguntas-frecuentes#que-es-fason">¿Qué es la producción a fason?</a></li>
+<li><a href="/preguntas-frecuentes#cantidad-minima">¿Cuál es la cantidad mínima de producción?</a></li>
+<li><a href="/preguntas-frecuentes#marca-impresa">¿Qué necesito para que el envase lleve mi marca impresa?</a></li>
+<li><a href="/preguntas-frecuentes#receta-propia">¿Puedo fabricar con mi propia receta?</a></li>
+<li><a href="/preguntas-frecuentes#rnpa-y-habilitaciones">¿Me ayudan con el RNPA y las habilitaciones?</a></li>
+<li><a href="/preguntas-frecuentes#plazo-de-cotizacion">¿Cuánto tarda una cotización?</a></li>
+<li><a href="/preguntas-frecuentes#confidencialidad">¿Cómo protegen la confidencialidad?</a></li>
+<li><a href="/preguntas-frecuentes#productos">¿Qué productos fabrican hoy?</a></li>
+</ul>
+<p style="margin-top:14px"><a class="more" href="/preguntas-frecuentes">Ver todas las preguntas frecuentes →</a></p>
 </div></section>
 
 <div id="cotizar" data-origen="web-alipro" data-num="10" data-titulo="Contanos qué querés fabricar"></div>

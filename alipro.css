@@ -211,6 +211,31 @@ textarea{resize:vertical;min-height:90px}
 .packlink{font-size:13.5px;color:var(--gris);margin:-4px 0 6px}
 .packlink a{display:inline-block;padding:11px 0}
 .packlink a{color:var(--rojo);font-weight:600;text-decoration:none}
+/* --- panel del hero: tarjeta blanca sobre carbón, usada en las páginas interiores (manual §6.3) --- */
+.hero .panel{margin-top:36px;background:#fff;color:var(--tinta);border-radius:12px;padding:24px 22px 22px}
+.hero .panel .ptag{margin-bottom:10px}
+.hero .panel h2{font-size:19px;margin-bottom:14px}
+.hero .panel ul{list-style:none}
+.hero .panel li{font-size:14.5px;line-height:1.45;padding:7px 0 7px 26px;position:relative;border-top:1px solid var(--linea)}
+.hero .panel li:first-child{border-top:none}
+.hero .panel li::before{content:"\2713";position:absolute;left:2px;top:7px;font-family:'Montserrat',Arial,sans-serif;font-weight:700;color:#1D8A46}
+/* variante "índice": lista de enlaces dentro del panel */
+.hero .panel.lista li{padding:0 0 0 26px}
+.hero .panel.lista li::before{content:"\2192";color:var(--rojo);top:50%;transform:translateY(-50%)}
+.hero .panel.lista a{display:flex;align-items:center;min-height:46px;text-decoration:none;color:var(--tinta);font-weight:500}
+.hero .panel.lista a:hover{color:var(--rojo)}
+/* --- enlace de texto "ver más →" con zona táctil de 44 px --- */
+.more{color:var(--rojo);font-weight:600;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.more:hover{text-decoration:underline}
+/* --- "Seguí leyendo": tarjetas con enlace a las otras páginas de apoyo --- */
+.relgrid{display:grid;gap:12px;border-top:1px solid var(--linea);padding-top:26px}
+.relcard{display:block;border:1px solid var(--linea);border-radius:10px;padding:20px;background:#fff;text-decoration:none}
+.relcard .ptag{margin-bottom:6px}
+.relcard b{font-family:'Montserrat',Arial,sans-serif;font-size:16px;display:block;margin-bottom:6px;color:var(--tinta)}
+.relcard span{font-size:14px;color:var(--gris);line-height:1.5;display:block}
+.relcard:hover{border-color:var(--rojo)}
+@media(min-width:600px){.relgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.relgrid{grid-template-columns:repeat(4,1fr);gap:20px}}
 /* --- botonera flotante --- */
 .floatstack{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:70;display:flex;flex-direction:column;gap:10px;align-items:flex-end;transition:opacity .2s}
 .floatstack.oculto{opacity:0;pointer-events:none}
@@ -256,6 +281,7 @@ section{padding:96px 0}
 .procgrid>img{aspect-ratio:4/4.6;position:sticky;top:100px;margin-top:0}
 .qgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .calidad img{margin-bottom:0;aspect-ratio:4/4.2}
+.hero .panel{margin-top:0;padding:30px 30px 26px}
 .plgrid{grid-template-columns:1fr 1fr;gap:24px}
 .plcard{padding:28px}
 .plcta{flex-direction:row;justify-content:space-between;align-items:center;gap:32px}

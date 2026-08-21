@@ -96,6 +96,8 @@ const plural = p => p.toLowerCase();
 
 function markup(cfg){
   const envasar = cfg.producto ? 'tus ' + plural(cfg.producto) : 'tu producto';
+  /* "Mirá la comparación": ancla a la sección #packaging si la página la tiene; si no, a la página /packaging */
+  const packHref = document.getElementById('packaging') ? '#packaging' : '/packaging';
   return '<div class="wrap">\n' +
 '<div class="fgrid">\n' +
 '<div>\n' +
@@ -133,7 +135,7 @@ campoProducto(cfg) + '\n' +
 '\n' +
 '<div class="notachico" id="notachico" hidden>Por debajo de 1.000 unidades producimos <b>solo con flow pack cristal</b>. El envase impreso con tu marca necesita una bobina propia, y para que tenga sentido conviene partir de 1.000 unidades. Podés arrancar con cristal y tu etiqueta, y pasar a la bobina cuando crezcas.</div>\n' +
 '<div class="fld" data-req="packaging"><label>¿Cómo querés el packaging? *</label>\n' +
-'<p class="packlink">¿No sabés cuál te conviene? <a href="#packaging">Mirá la comparación</a>.</p>\n' +
+'<p class="packlink">¿No sabés cuál te conviene? <a href="' + packHref + '">Mirá la comparación</a>.</p>\n' +
 '<div class="pills col1" role="radiogroup" aria-label="Tipo de packaging">\n' +
 '<label><input type="radio" name="packaging" value="Film cristal (sin impresión)"><span>Film cristal — sin impresión, sin inversión inicial</span></label>\n' +
 '<label><input type="radio" name="packaging" value="Bobina impresa con su marca"><span>Bobina impresa con mi marca</span></label>\n' +
@@ -142,7 +144,7 @@ campoProducto(cfg) + '\n' +
 '<div class="avisobob" id="avisobob" hidden>\n' +
 '<b>Antes de seguir, esto es importante</b>\n' +
 '<p>La bobina impresa tiene un <b>mínimo de 300 kg</b> —150 kg por cada uno de dos diseños—, porque es lo mínimo que imprime una flexográfica. Esos 300 kg rinden <b>unos 100.000 alfajores</b>, quedan guardados en nuestra planta y los vamos usando en cada producción que nos pidas.</p>\n' +
-'<!-- MONTO BOBINA: si cambia, actualizar acá, en la tarjeta "Opción B" y en la nota de la sección #packaging -->\n' +
+'<!-- MONTO BOBINA: si cambia, actualizar acá, en packaging.html (tarjeta "Opción B" y nota), en preguntas-frecuentes.html (respuesta sobre marca impresa y su JSON-LD) y en fason/alfajores.html -->\n' +
 '<p class="montobob">Inversión inicial aproximada: <b>$3.000.000</b> por única vez — unos <b>$30 por alfajor</b> sobre las primeras 100.000 unidades.<span class="ref">Valores de referencia a julio 2026. Te confirmamos el importe vigente junto con la cotización.</span></p>\n' +
 '<label class="chk"><input type="checkbox" name="acepta_bobina" id="acepta_bobina"><span>Entiendo que el packaging con mi marca requiere una inversión inicial de aproximadamente <b>$3.000.000</b> en bobina</span></label>\n' +
 '<div class="err">Confirmá que entendés la inversión inicial, o elegí film cristal.</div>\n' +
