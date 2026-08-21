@@ -1,0 +1,15 @@
+{
+  "trailingSlash": false,
+  "redirects": [
+    {"source":"/alfajores.html","destination":"/fason/alfajores","statusCode":301},
+    {"source":"/alfajores","destination":"/fason/alfajores","statusCode":301},
+    {"source":"/index.html","destination":"/","statusCode":308},
+    {"source":"/index","destination":"/","statusCode":308},
+    {"source":"/:path*/index.html","destination":"/:path*","statusCode":308},
+    {"source":"/:path*/index","destination":"/:path*","statusCode":308},
+    {"source":"/:path*.html","destination":"/:path*","statusCode":308}
+  ],
+  "rewrites": [
+    {"source":"/:path*","destination":"/:path*.html"}
+  ]
+}
